@@ -1,0 +1,195 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Orbitron&display=swap');
+
+/* Alteração do Box Model para border-box */
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+}
+
+body {
+    font-family: "Open Sans", Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url(../imagens/textura-fundo.png);  
+}
+/* torna as imagens responsivas */
+img {
+    max-width: 100%;
+}
+/* css reset */
+body, h1, h2, h3, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+header, footer {
+    background-color: rgba(100, 148, 237, 0.541);
+    text-align: center;
+}
+header {
+    border-bottom: solid 1px;
+    margin-bottom: 10px;
+}
+
+footer {
+    border-top: solid 1px;
+}
+article {
+    background-color: rgba(255, 255, 255, 0.685);
+    padding: 2%;
+    box-shadow: grey;
+    margin: 10px 0;
+}
+/* Ao declarar uma largura menor do que 100%, vc usa margem automatica para centralizar o bloco/box */
+main {
+    width: 95%;
+    margin: auto;
+}
+h1, nav, h2, h3, button {
+    font-family: Orbitron, sans-serif;
+}
+h2, h3, p {
+    padding: 1%;
+}
+footer h2 {
+    font-size: 1rem;
+}
+footer img { 
+    width: 40px;
+    /* margin-left: 0.5rem;
+    margin-right: 0.5rem; */
+}
+footer p { 
+    font-size: 0.6rem;
+    font-style: italic;
+}
+section figure {
+margin: 2% 0;
+}
+
+figcaption { 
+    text-align: center;
+    font-weight: bold;
+
+}
+.voltar {
+background-color: hotpink;
+position: fixed;
+padding: 5px;
+border: solid 1px;
+box-shadow: black 5px 5px 5px;
+border-radius: 5px;
+/* coordenadas */
+bottom: 10px;
+right: 10px;
+}
+.voltar a:hoover, .voltar a:focus {
+    background-color: chartreuse;
+    color: black;
+
+}
+
+h1, h1 a, nav, nav a {
+    /* ativar flex */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav a {
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    height: 50px;
+}
+h1 {
+    padding: 5px 0;
+    font-size: 2.2rem;
+}
+
+h1 img {
+    width: 50px;
+}
+nav a:hover, nav a:focus {
+    background-color: black;
+    color: white;
+}
+/* poderia ser por id ou class #mensagem #telefone .contato */
+input, textarea {
+border: solid 2px;
+font-size: 1rem;
+width: 100%;
+padding: 1.5%;
+}
+/* textarea {
+    resize: none;
+} */ /*  tamanho da area sem o lado do cliente poder alterar */
+label {
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+button:hover, button:focus {
+    background-color:  rgba(100, 148, 237, 0.733);
+}
+/* outline (borda do botao) */
+
+/* regras media queries (breakpoints) */
+
+/* 1 Breakpoint a partir de 700px */
+
+@media screen and (min-width: 700px) {
+    header div {
+        display: flex;
+        justify-content: space-between;
+        width: 95%;
+        margin: auto;
+    }
+}
+/* flex item(filho) e flex container(pai) */
+.grupo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+/* deixar em 2 colunas */
+.grupo section .grupo figure {width: 49%;}
+
+/* 2 Breakpoint a partir de 850px */
+@media screen and (min-width: 850px) {
+    html { font-size: 20px;}
+}
+
+    /* 3 Breakpoint a partir de 850px */
+@media screen and (min-width: 1000px) {
+    html { font-size: 22px;}
+    h1 img {width: auto;}
+    header {
+        
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+}
+/* positio */
+#topo, #o-que-fazemos, #nossas-equipes, #contato {
+    padding: 75px;
+}
+
+header div, main {
+    max-width: 1000px;
+}
